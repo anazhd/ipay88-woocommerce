@@ -16,6 +16,7 @@ class Aics_ipay_gateway extends WC_Payment_Gateway{
 	
     public function __construct(){
         $this->id= 'woo_ipay88';
+	$this->icon= apply_filters('woocommerce_ipay88_icon', esc_url( plugins_url( 'assets/images/ipay88.png', __FILE__ ) ) );
         $this->has_fields = false;
         $this->method_title = 'ipay88 payment processing';
         $this->method_description = 'Process ipay88 payment trough woocommerce. custom plugin made to fit the needs.';
@@ -24,7 +25,7 @@ class Aics_ipay_gateway extends WC_Payment_Gateway{
         $this->init_settings();
         
         // after init_settins();
-        $this->title = 'ipay88 Payment Gateway';
+        $this->title = 'ipay88';
         $this->merchantID = $this->get_option( 'merchantID' );
         $this->merchantKey = $this->get_option('merchantKey');
         $this->pageID = $this->get_option('paymentPageID');
